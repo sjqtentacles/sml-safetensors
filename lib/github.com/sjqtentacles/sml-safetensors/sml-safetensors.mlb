@@ -1,0 +1,6 @@
+(* sml-safetensors: public library basis. Re-exports the vendored sml-json /
+   sml-parsec / sml-float cores plus the safetensors reader. Consumers reference
+   this file. *)
+$(SML_LIB)/basis/basis.mlb
+
+sources.mlb

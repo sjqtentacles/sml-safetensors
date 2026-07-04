@@ -1,0 +1,13 @@
+(* Source files for the sml-json library, in dependency order. Pulls in the
+   vendored sml-parsec core, then the JSON AST/parser and serializers.
+
+   parsec.mlb is brought in WITHOUT a `local` wrapper so consumers can `open
+   CharParsec` alongside `Json` if they wish. *)
+
+$(SML_LIB)/basis/basis.mlb
+
+../sml-parsec/parsec.mlb
+
+json.sig
+json.sml
+jsonPretty.sml

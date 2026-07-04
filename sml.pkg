@@ -1,0 +1,6 @@
+package github.com/sjqtentacles/sml-safetensors
+
+require {
+  github.com/sjqtentacles/sml-json
+  github.com/sjqtentacles/sml-float
+}

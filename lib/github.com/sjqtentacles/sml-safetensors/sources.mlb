@@ -1,0 +1,11 @@
+(* Source files for sml-safetensors, in dependency order: the vendored sml-json
+   (which itself pulls in its vendored sml-parsec) for the header, then sml-float
+   for dequantizing the tensor buffers, then our own files. *)
+
+$(SML_LIB)/basis/basis.mlb
+
+../sml-json/sources.mlb
+../sml-float/sources.mlb
+
+safetensors.sig
+safetensors.sml

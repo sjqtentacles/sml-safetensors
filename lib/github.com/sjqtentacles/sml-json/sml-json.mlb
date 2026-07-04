@@ -1,0 +1,7 @@
+(* sml-json: public library basis. Re-exports the vendored sml-parsec core
+   plus the JSON sources, so a consumer gets `structure Json` and
+   `structure JsonPretty`. *)
+
+$(SML_LIB)/basis/basis.mlb
+
+sources.mlb
