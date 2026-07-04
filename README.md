@@ -22,6 +22,16 @@ bad header JSON, offsets out of range, size mismatch, unknown dtype) raises
 
 Reusable for reading *any* safetensors model (GPT-2, BERT, …).
 
+## Installation
+
+```
+smlpkg add github.com/sjqtentacles/sml-safetensors
+smlpkg sync
+```
+
+Depends on [`sml-json`](https://github.com/sjqtentacles/sml-json) and
+[`sml-float`](https://github.com/sjqtentacles/sml-float) (fetched by `smlpkg sync`).
+
 ## Usage
 
 ```sml
