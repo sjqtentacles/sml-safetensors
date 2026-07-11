@@ -67,6 +67,28 @@ val dtypeSize : dtype -> int
 reported by `dtypeOf`/`shapeOf` but `get` raises `Safetensors` for them (no lossy
 real conversion is implied).
 
+## Example
+
+`make example` builds and runs [`examples/demo.sml`](examples/demo.sml), which
+hand-builds a tiny two-tensor safetensors image in memory (F32 and F16
+tensors plus a `__metadata__` entry) and exercises `parse`, `names`,
+`metadata`, `contains`, `dtypeOf`, `shapeOf`, `get` (dequantizing both float
+widths), `dtypeName`, `dtypeSize`, and the `Safetensors` error path on a
+truncated blob (output is byte-identical under MLton and Poly/ML):
+
+```
+safetensors: hand-built image with tensors 'w' (F32 2x2) and 'b' (F16 len 2)
+  names        = [w, b]
+  metadata     = [note=demo]
+  contains w/z = true / false
+  dtypeOf w    = F32 (4 B/elem)
+  dtypeOf b    = F16 (2 B/elem)
+  shapeOf w    = [2,2]
+  get w: data  = [1.0000, 2.0000, ~1.0000, 0.5000]
+  get b: data  = [1.0000, ~1.0000]
+  parse of truncated blob: caught Safetensors "truncated: no 8-byte header length"
+```
+
 ## Testing
 
 ```
